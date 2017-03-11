@@ -10,7 +10,7 @@ import {
   ScrollView
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import Icon from 'react-native-vector-icons/FontAwesome';
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import { TextInputMask } from 'react-native-masked-text';
 
 class Register extends React.Component {
@@ -57,8 +57,7 @@ class Register extends React.Component {
                    style={styles.logo}/>
 
             <View style={styles.textBox}>
-              <Icon style={styles.icon} name="user" size={21}
-                    color="rgba(255, 255, 255, 0.8)" />
+
               <TextInput
                 onChangeText={(name) => this.setState({ name })}
                 style={styles.input} placeholder="Full name"
@@ -67,8 +66,7 @@ class Register extends React.Component {
             </View>
 
             <View style={styles.textBox}>
-              <Icon style={styles.icon} name="phone" size={21}
-                    color="rgba(255, 255, 255, 0.8)" />
+              
               <TextInputMask
                 onChangeText={(phone_number) => this.setState({ phone_number })}
                 style={styles.input} placeholder="Phone number"
