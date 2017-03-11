@@ -2,7 +2,7 @@ import React from 'react';
 import { PTextInput, View, Text, Image, TouchableOpacity, Platform } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import { CardSection, Card, Input, Button, SearchInput, BackButton } from '../common';
+import { SearchInput } from '../common';
 
 
 class NavBar extends React.Component {
@@ -15,26 +15,27 @@ class NavBar extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  renderBackButton() {
-    if (this.props.backAction) {
-      return (
-        <BackButton buttonAction={this.props.backAction} />
-      );
-    }
-  }
+  // renderBackButton() {
+  //   if (this.props.backAction) {
+  //     return (
+  //       <BackButton buttonAction={this.props.backAction} />
+  //     );
+  //   }
+  // }
 
   handleSubmit(e) {
     this.props.receiveQuery(this.state.query);
     Actions.searchResults();
   }
 
+  //{ Platform.select({ ios: this.renderBackButton() }) }
+
   render() {
     return (
       <View style={ styles.header }>
-          { Platform.select({ ios: this.renderBackButton() }) }
+
           <SearchInput
-             label="Search"
-             placeholder="Movie Name"
+             placeholder="What're you feeling?"
              onChangeText={ query => this.setState({ query }) }
              onSubmitEditing={ this.handleSubmit }
            />
@@ -54,6 +55,7 @@ const styles = {
       }
     }),
     height: 80,
+    width: "100%",
     paddingBottom: 25,
     paddingRight: 25,
     paddingLeft: 25,
@@ -61,16 +63,6 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row'
-  },
-  iconStyle: {
-    height: 20,
-    width: 30
-  },
-  iconContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 20
   }
 };
 

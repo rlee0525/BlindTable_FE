@@ -17,14 +17,12 @@ import Navbar from '../Navbar';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
 
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Navbar />
       </View>
     );
@@ -37,7 +35,10 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
   },
   logo: {
     left: 12,
