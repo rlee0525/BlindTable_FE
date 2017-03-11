@@ -4,26 +4,54 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  TextInput,
-  TouchableHighlight,
-  AsyncStorage,
-  ScrollView
+  Picker
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import Navbar from '../Navbar';
+import { SearchInput } from '../common';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hour: "12",
+      ampm: "pm"
+    }
   }
 
 
   render() {
     return (
       <View style={styles.container}>
-        <Navbar />
+        <View style={styles.headerStyle}>
+          <Text style={styles.textHeader}>Pick a Time</Text>
+        </View>
+        <View style={styles.pickerStyle}>
+          <Picker
+            style={styles.individualPicker}
+            selectedValue={this.state.hour}
+            onValueChange={ hr => this.setState({hour: hr})}>
+            <Picker.Item label="01" value="01" />
+            <Picker.Item label="02" value="02" />
+            <Picker.Item label="03" value="03" />
+            <Picker.Item label="04" value="04" />
+            <Picker.Item label="05" value="05" />
+            <Picker.Item label="06" value="06" />
+            <Picker.Item label="07" value="07" />
+            <Picker.Item label="08" value="08" />
+            <Picker.Item label="09" value="09" />
+            <Picker.Item label="11" value="11" />
+            <Picker.Item label="12" value="12" />
+          </Picker>
+
+          <Picker
+            style={styles.individualPicker}
+            selectedValue={this.state.ampm}
+            onValueChange={ m => this.setState({ampm: m})}>
+            <Picker.Item label="AM" value="am" />
+            <Picker.Item label="PM" value="pm" />
+          </Picker>
+        </View>
       </View>
     );
   }
@@ -32,56 +60,31 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'center'
+    // backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  logo: {
-    left: 12,
-    alignSelf: 'center',
-    borderRadius: 5,
-    marginTop: 120,
-    marginBottom: 140
+  pickerStyle: {
+    flex: 3,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'center'
   },
-  textBox: {
-    borderBottomWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.7)',
+  individualPicker: {
+    width: "40%"
   },
-  input: {
-    marginTop: 10,
-    alignSelf: 'stretch',
-    height: 50,
-    fontSize: 15,
-    fontFamily: 'Arial',
-    color: 'white',
-    textAlign: 'center',
+  headerStyle: {
+    width: "100%",
+    flex: 2,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
   },
-  button: {
-    marginTop: 45,
-    height: 50,
-    backgroundColor: '#0091EA',
-    paddingLeft: 40,
-    paddingRight: 40,
-    justifyContent: 'center',
-  },
-  buttonText: {
-    fontSize: 16,
-    color: '#FFF',
-    alignSelf: 'center',
-    fontFamily: 'Arial'
-  },
-  errors: {
-    fontSize: 11,
-    color: '#FFF',
-    alignSelf: 'center',
-    textAlign: 'center',
-    backgroundColor: 'rgba(0,0,0,0)',
-    marginTop: 15,
-    fontFamily: 'Arial'
+  textHeader: {
+    textAlign: "center",
   }
 });
 

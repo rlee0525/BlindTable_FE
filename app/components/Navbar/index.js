@@ -33,12 +33,11 @@ class NavBar extends React.Component {
   render() {
     return (
       <View style={ styles.header }>
-
-          <SearchInput
-             placeholder="What're you feeling?"
-             onChangeText={ query => this.setState({ query }) }
-             onSubmitEditing={ this.handleSubmit }
-           />
+        <SearchInput
+           placeholder="What're you feeling?"
+           onChangeText={ query => this.setState({ query }) }
+           onSubmitEditing={ this.handleSubmit }
+        />
       </View>
     );
   }
@@ -63,6 +62,9 @@ const styles = {
     justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row'
+  },
+  container: {
+    width: "90%"
   }
 };
 
