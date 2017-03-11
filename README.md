@@ -7,4 +7,4 @@ Members:
 - David Hu
 - Edwin La
 - Elif Sezgin
-- Raymnod Lee
+- Raymond Lee
