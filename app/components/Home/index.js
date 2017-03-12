@@ -25,9 +25,13 @@ class Home extends React.Component {
     return (
       <Image source={require('../../../assets/images/background.png')}
         style={styles.backgroundImage}>
+
         <View style={styles.container}>
+          <Image source={require('../../../assets/images/logo.png')}
+            style={styles.logo}/>
+          <Text style={styles.welcomeText}>Welcome to BlindTable</Text>
           <View style={styles.headerStyle}>
-            <Text style={styles.textHeader}>Pick a time</Text>
+            <Text style={styles.textHeader}>PICK A TIME</Text>
           </View>
           <View style={styles.pickerStyle}>
             <Picker
@@ -70,33 +74,47 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  logo: {
+    marginTop: "30%",
+    marginBottom: "10%",
+    height: 50,
+    width: 50,
+  },
+  welcomeText: {
+    fontFamily: "Arial",
+    fontSize: 25,
+    color: "white",
+    letterSpacing: 1,
+    marginBottom: "15%"
+  },
   container: {
     flex: 1,
     width: null,
     height: null,
     // backgroundColor: 'rgba(0, 0, 0, 0.7)',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
+    padding: "7%"
   },
   pickerStyle: {
-    flex: 3,
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'center',
+    borderBottomColor: 'white'
   },
   individualPicker: {
     width: "40%"
   },
   headerStyle: {
     width: "100%",
-    flex: 2,
     flexDirection: 'row',
     alignItems: 'flex-end',
-    justifyContent: 'center'
   },
   textHeader: {
-    color: "white"
+    fontFamily: "ArialMT",
+    fontWeight: '500',
+    fontSize: 15,
+    color: "white",
+    marginBottom: "10%"
   }
 });
 
