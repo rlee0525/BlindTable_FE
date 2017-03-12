@@ -9,6 +9,7 @@ import {
   TouchableHighlight
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { fetchReservations } from '../../actions/reservations_actions';
 
 import { SearchInput } from '../common';
 import { Button } from "../common";
@@ -23,7 +24,7 @@ class Home extends React.Component {
   }
 
   onButtonPress() {
-
+    debugger
   }
 
   render() {
@@ -126,6 +127,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchReservations: query => dispatch(fetchReservations(query))
 });
 
 export default connect(
