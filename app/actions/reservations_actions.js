@@ -26,9 +26,9 @@ export const fetchReservations = query => dispatch => (
     .catch(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const createReservation = query => dispatch => (
-  APIUtil.createReservation(query)
+export const createReservation = reservation => dispatch => {
+  return APIUtil.createReservation(reservation)
     .then(response => response.json())
     .then(responseData => dispatch(receiveReservation(responseData)))
     .catch(err => dispatch(receiveErrors(err.responseJSON)))
-);
+};
