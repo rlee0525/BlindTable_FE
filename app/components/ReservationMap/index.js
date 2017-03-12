@@ -25,7 +25,11 @@ class ReservationMap extends React.Component {
 
     this.state = {
       markers: null,
-      selectedId: null
+      selectedId: null,
+      buttonOne: false,
+      buttonTwo: false,
+      buttonThree: false,
+      buttonFour: false
     };
 
     this.handleMarkerPress = this.handleMarkerPress.bind(this);
@@ -69,6 +73,7 @@ class ReservationMap extends React.Component {
     } else {
       res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
     }
+
     return <ReservationItem res={res} key={res.phone_number} createReservation={this.props.createReservation}/>;
   }
 
@@ -167,6 +172,37 @@ const styles = {
   },
   city: {
     color: '#343435'
+  },
+  button: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#ed6d72',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20
+  },
+  buttonText: {
+    zIndex: 30,
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Arial',
+    letterSpacing: 0.5
+  },
+  buttonAlt: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#f7a5a9',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20,
   }
 };
 

@@ -1,13 +1,18 @@
 import React from 'react';
-import { ScrollView, View, Text, Image, Alert } from 'react-native';
+import { ScrollView, View, Text, Image, Alert, TouchableOpacity } from 'react-native';
 
 import { SmallButton } from '../common';
 
 class ReservationItem extends React.Component {
   constructor(props) {
     super(props);
-    console.log('item');
-    console.log(props);
+    this.state = {
+      buttonOne: false,
+      buttonTwo: false,
+      buttonThree: false,
+      buttonFour: false,
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -122,6 +127,37 @@ const styles = {
   },
   city: {
     color: '#343435'
+  },
+  button: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#ed6d72',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20
+  },
+  buttonText: {
+    zIndex: 30,
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Arial',
+    letterSpacing: 0.5
+  },
+  buttonAlt: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#f7a5a9',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20,
   }
 };
 
