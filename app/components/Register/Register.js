@@ -61,7 +61,7 @@ class Register extends React.Component {
           <ScrollView keyboardShouldPersistTaps='never'>
             <Image source={require('../../../assets/images/logo.png')}
                    style={styles.logo}/>
-                 <Text style={styles.welcomeText}>WELCOME TO BLINDTABLE</Text>
+                 <Text style={styles.welcomeText}>Welcome to BlindTable.</Text>
             <View style={styles.textBox}>
               <Icon style={styles.icon} name="user" size={21}
                     color="rgba(255, 255, 255, 0.8)" />
@@ -106,12 +106,15 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     color: 'white',
-    fontWeight: 'bold',
+    marginLeft: "5%",
+    marginBottom: "10%",
+    fontSize: 25,
+    letterSpacing: 1,
   },
   logo: {
     marginTop: "30%",
     marginBottom: "10%",
-    marginLeft: "10%",
+    marginLeft: "5%",
     height: 40,
     width: 40,
   },

@@ -21,13 +21,15 @@ const styles = {
     justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 2,
-    borderRadius: 20,
+    borderRadius: 30,
+    width: "100%"
   },
   buttonText: {
     fontSize: 16,
     color: '#FFF',
     alignSelf: 'center',
-    fontFamily: 'Arial'
+    fontFamily: 'Arial',
+    letterSpacing: 0.5
   }
 };
 
