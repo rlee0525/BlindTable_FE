@@ -18,15 +18,16 @@ class ReservationMap extends React.Component {
     super(props);
   }
 
-  renderReservations() {
+  renderReservation() {
     return this.props.reservations.map( res => (
       <ReservationItem res={res} key={res.phone_number}/>
     ));
   }
 
   render() {
+    console.log(this.props);
     return (
-      <View style={{ position: 'relative', height: 500}}>
+      <View style={{ position: 'relative', height: 350}}>
         <MapView
           style={{ left:0, right: 0, top:0, bottom: 0, position: 'absolute' }}
           initialRegion={{
@@ -36,14 +37,13 @@ class ReservationMap extends React.Component {
             longitudeDelta: 0.0421,
           }}
         />
+        <View style={styles.detailContainer}>
+          { this.renderReservation() }
+        </View>
       </View>
     );
   }
 }
-
-ReservationMap.propTypes = {
-  provider: MapView.ProviderPropType,
-};
 
 const styles = {
   containerStyle: {
@@ -57,6 +57,11 @@ const styles = {
   map: {
     width: width,
     height: height,
+  },
+  detailContainer: {
+    alignSelf: 'center',
+    top: 350,
+    width: "100%"
   }
 };
 
