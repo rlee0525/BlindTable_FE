@@ -32,9 +32,6 @@ class Home extends React.Component {
         style={styles.backgroundImage}>
 
         <View style={styles.container}>
-          <Image source={require('../../../assets/images/logo.png')}
-            style={styles.logo}/>
-          <Text style={styles.welcomeText}>Welcome to BlindTable</Text>
           <View style={styles.headerStyle}>
             <Text style={styles.textHeader}>PICK A TIME</Text>
           </View>
@@ -99,6 +96,7 @@ const styles = StyleSheet.create({
     height: null,
     // backgroundColor: 'rgba(0, 0, 0, 0.7)',
     flexDirection: 'column',
+    justifyContent: 'center',
     padding: "7%"
   },
   pickerStyle: {
