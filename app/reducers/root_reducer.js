@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import authenticationReducer from './authentication_reducer';
+import reservationsReducer from './reservations_reducer';
 
 const rootReducer = combineReducers({
-  currentUser: authenticationReducer,
+  session: authenticationReducer,
+  reservations: reservationsReducer
 });
 
 export default rootReducer;
