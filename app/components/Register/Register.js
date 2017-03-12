@@ -41,6 +41,7 @@ class Register extends React.Component {
       image_url: "image_url",
       description: "description",
     };
+    console.log(user);
 
     this.props.registerUser(user)
       .then(response => {
@@ -57,6 +58,7 @@ class Register extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.container}>
         <View style={styles.container}>
@@ -78,7 +80,7 @@ class Register extends React.Component {
             </View>
 
             <Text style={styles.inputTitle}>PHONE NUMBER</Text>
-            <View style={styles.textBox}>
+            <View style={styles.textBoxLast}>
               <TextInputMask
                 onChangeText={(phone_number) => this.setState({ phone_number })}
                 style={styles.input} value={this.state.phone_number} type={'cel-phone'}
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   logo: {
-    marginTop: "20%",
+    marginTop: "18%",
     marginBottom: "10%",
     height: 50,
     width: 50,
@@ -130,6 +132,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.7)',
     flexDirection: 'row',
+  },
+  textBoxLast: {
+    borderBottomWidth: 2,
+    borderColor: 'rgba(255, 255, 255, 0.7)',
+    flexDirection: 'row',
+    marginBottom: '7%',
   },
   input: {
     flex: 0.85,
