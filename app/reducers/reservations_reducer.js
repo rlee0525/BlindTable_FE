@@ -24,25 +24,6 @@ let _defaultState = [
     "number_people": 3,
     "image": "https://resizer.otstatic.com/v2/photos/small/2.jpg"
   },
-  {
-    "rid":4,
-    "name":"One Market Restaurant",
-    "address":"1 Market Street",
-    "address2":"",
-    "city":"San Francisco",
-    "state":"CA",
-    "country":"US",
-    "latitude":"37.7938190",
-    "longitude":"-122.3950890",
-    "postal_code":"94105",
-    "phone_number":"4157775577x",
-    "metro_name":"San Francisco Bay Area",
-    "reservation_url":"http://www.opentable.com/restaurant/profile/4",
-    "profile_url":"http://www.opentable.com/restaurant/profile/4",
-    "is_restaurant_in_group":false,
-    "number_people": null,
-    "image": "https://resizer.otstatic.com/v2/photos/small/4.jpg"
-  }
 ];
 
 const reservationsReducer = (state = _defaultState, action) => {

@@ -18,13 +18,14 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hour: "06",
+      hour: "08",
       ampm: "pm"
     };
   }
 
   onButtonPress() {
-    debugger
+    this.props.fetchReservations()
+    .then(Actions.reservationIndex());
   }
 
   render() {

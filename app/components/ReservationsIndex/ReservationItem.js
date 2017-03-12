@@ -12,7 +12,7 @@ class RestaurantItem extends React.Component {
     return(
       <View style={styles.container}>
         <View style={styles.details}>
-          <Image source={{uri: this.props.res.image}} style={{height: 75, width: 75}}>
+          <Image source={{uri: `https://resizer.otstatic.com/v2/photos/small/${this.props.res.rid}.jpg`}} style={{height: 75, width: 75}}>
           </Image>
           <View style={styles.containerStyle}>
 

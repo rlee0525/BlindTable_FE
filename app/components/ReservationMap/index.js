@@ -69,74 +69,7 @@ class ReservationMap extends React.Component {
     } else {
       res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
     }
-    // return <ReservationItem res={res} key={res.phone_number}/>;
-    return (
-      <View style={styles.container}>
-        <View style={styles.details}>
-          <Image source={{uri: res.image}} style={{height: 75, width: 75}}>
-          </Image>
-          <View style={styles.containerStyle}>
-
-            <View style={styles.infoStyle}>
-              <Text style={styles.name}>{res.name}</Text>
-              <Text style={styles.address}>{res.address}</Text>
-              <Text style={styles.city}>{res.city}, {res.state}, {res.postal_code}</Text>
-            </View>
-
-          </View>
-        </View>
-        <View style={styles.buttonContainer}>
-          <View style={styles.itemButton}>
-            <SmallButton
-              buttonText={'8:00 PM'}
-              onPress={() => Alert.alert(
-                `${res.name}`,
-                `Join the party for 8:00PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
-                ]
-              )}
-              />
-            <SmallButton
-              buttonText={'8:15 PM'}
-              onPress={() => Alert.alert(
-                `${res.name}`,
-                `Join the party for 8:15PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
-                ]
-              )}
-              />
-          </View>
-          <View style={styles.itemButton}>
-            <SmallButton
-              buttonText={'8:30 PM'}
-              onPress={() => Alert.alert(
-                `${res.name}`,
-                `Join the party for 8:30PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
-                ]
-              )}
-              />
-            <SmallButton
-              buttonText={'8:45 PM'}
-              onPress={() => Alert.alert(
-                `${res.name}`,
-                `Join the party for 8:45PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
-                ]
-              )}
-              />
-          </View>
-        </View>
-      </View>
-    );
+    return <ReservationItem res={res} key={res.phone_number}/>;
   }
 
   render() {
@@ -155,9 +88,7 @@ class ReservationMap extends React.Component {
           initialRegion={{
             latitude: latitude,
             longitude: longitude,
-            // latitudeDelta: 0.0922,
             latitudeDelta: latitudeDelta,
-            // longitudeDelta: 0.0421,
             longitudeDelta: longitudeDelta,
           }}>
           {this.state.markers && this.state.markers.map(marker => {
@@ -210,30 +141,6 @@ const styles = {
   viewText: {
     fontSize: 16,
     color: 'white'
-  }, //
-  details: {
-    width: "100%",
-    flexDirection: "row"
-  },
-  container: {
-    width: "100%",
-    flexDirection: "column",
-    padding: "7%",
-    borderColor: '#4a4c4f',
-  },
-  itemButton: {
-    flexDirection: 'row'
-  },
-  name: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#202021'
-  },
-  address: {
-    color: '#343435'
-  },
-  city: {
-    color: '#343435'
   }
 };
 

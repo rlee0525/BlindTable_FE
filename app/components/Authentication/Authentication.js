@@ -6,6 +6,7 @@ import {
   Image,
   TextInput,
   TouchableHighlight,
+  TouchableOpacity,
   AsyncStorage,
   ScrollView
 } from 'react-native';
@@ -57,12 +58,12 @@ class Authentication extends React.Component {
             </View>
 
 
-            <TouchableHighlight style={styles.button}
+            <TouchableOpacity style={styles.button}
                                 onPress={this.onAuthPressed.bind(this)}>
               <Text style={styles.buttonText}>
                 Submit
               </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
 
             <Text style={styles.errors}>
               {this.state.errors ? this.state.errors.join("\n") : ""}
