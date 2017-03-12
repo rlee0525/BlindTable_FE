@@ -30,7 +30,7 @@ class RestaurantItem extends React.Component {
               buttonText={'8:00 PM'}
               onPress={() => Alert.alert(
                 `${this.props.res.name}`,
-                `Would you like to make a reservation at ${this.props.res.name} for 8:00PM?`,
+                `Join the party for 8:00PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -41,7 +41,7 @@ class RestaurantItem extends React.Component {
               buttonText={'8:15 PM'}
               onPress={() => Alert.alert(
                 `${this.props.res.name}`,
-                `Would you like to make a reservation at ${this.props.res.name} for 8:15PM?`,
+                `Join the party for 8:15PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -54,7 +54,7 @@ class RestaurantItem extends React.Component {
               buttonText={'8:30 PM'}
               onPress={() => Alert.alert(
                 `${this.props.res.name}`,
-                `Would you like to make a reservation at ${this.props.res.name} for 8:30PM?`,
+                `Join the party for 8:30PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -65,7 +65,7 @@ class RestaurantItem extends React.Component {
               buttonText={'8:45 PM'}
               onPress={() => Alert.alert(
                 `${this.props.res.name}`,
-                `Would you like to make a reservation at ${this.props.res.name} for 8:45PM?`,
+                `Join the party for 8:45PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
