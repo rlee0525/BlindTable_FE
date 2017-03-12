@@ -27,6 +27,7 @@ class ReservationMap extends React.Component {
     let restaurants = this.props.reservations.map( e => {
       return {
         id: e['rid'],
+        name: e['name'],
         latlng: {
           latitude: parseInt(e['latitude']),
           longitude: parseInt(e['longitude'])
@@ -64,7 +65,7 @@ class ReservationMap extends React.Component {
           {this.state.markers && this.state.markers.map(marker => {
             return (
               <MapView.Marker
-                title={"hi"}
+                title={marker.name}
                 key={marker.id}
                 coordinate={marker.latlng}
               />
