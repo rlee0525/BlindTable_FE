@@ -29,6 +29,6 @@ export const fetchReservations = query => dispatch => (
 export const createReservation = reservation => dispatch => {
   return APIUtil.createReservation(reservation)
     .then(response => response.json())
-    .then(responseData => dispatch(receiveReservation(responseData)))
+    .then(responseData => console.log('suurrre'))
     .catch(err => dispatch(receiveErrors(err.responseJSON)))
 };

@@ -36,6 +36,7 @@ class ReservationMap extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.reservations);
     let restaurants = this.props.reservations.map( e => {
       return {
         id: e['rid'],
@@ -73,7 +74,7 @@ class ReservationMap extends React.Component {
     } else {
       res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
     }
-    return <ReservationItem res={res} key={res.phone_number} createReservation={this.props.createReservation}/>;
+    return <ReservationItem res={res} key={Math.random()} createReservation={this.props.createReservation}/>;
   }
 
   render() {

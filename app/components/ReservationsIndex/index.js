@@ -18,7 +18,7 @@ class ReservationsIndex extends React.Component {
     return this.props.reservations.map( res => (
       <ReservationItem
         res={res}
-        key={res.rid}
+        key={Math.random()}
         createReservation={this.props.createReservation} />
     ));
   }

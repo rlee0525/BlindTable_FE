@@ -18,7 +18,7 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hour: "08",
+      hour: "05",
       ampm: "pm"
     };
   }

@@ -23,76 +23,89 @@ class ReservationItem extends React.Component {
       party_size: 1
     };
     this.props.createReservation(res);
+    Alert.alert(
+      `${this.props.res.name}`,
+      `See you there ;)`,
+      [
+        {text: 'Dismiss', onPress: () => console.log('Cancel Pressed!') },
+      ]
+    );
   }
 
   render() {
-    return(
-      <View style={styles.container}>
-        <View style={styles.details}>
-          <Image source={{uri: `https://resizer.otstatic.com/v2/photos/small/${this.props.res.rid}.jpg`}} style={{height: 75, width: 75}}>
-          </Image>
-          <View style={styles.containerStyle}>
+    if(this.props.res.rid) {
+      return(
+        <View style={styles.container}>
+          <View style={styles.details}>
+            <Image source={{uri: `https://resizer.otstatic.com/v2/photos/small/${this.props.res.rid}.jpg`}} style={{height: 75, width: 75}}>
+            </Image>
+            <View style={styles.containerStyle}>
 
-            <View style={styles.infoStyle}>
-              <Text style={styles.name}>{this.props.res.name}</Text>
-              <Text style={styles.address}>{this.props.res.address}</Text>
-              <Text style={styles.city}>{this.props.res.city}, {this.props.res.state}, {this.props.res.postal_code}</Text>
+              <View style={styles.infoStyle}>
+                <Text style={styles.name}>{this.props.res.name}</Text>
+                <Text style={styles.address}>{this.props.res.address}</Text>
+                <Text style={styles.city}>{this.props.res.city}, {this.props.res.state}, {this.props.res.postal_code}</Text>
+              </View>
+
             </View>
-
+          </View>
+          <View style={styles.buttonContainer}>
+            <View style={styles.itemButton}>
+              <SmallButton
+                buttonText={'8:00 PM'}
+                onPress={() => Alert.alert(
+                  `${this.props.res.name}`,
+                  `Join the party for 8:00PM?`,
+                  [
+                    {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                    {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
+                  ]
+                )}
+                />
+              <SmallButton
+                buttonText={'8:15 PM'}
+                onPress={() => Alert.alert(
+                  `${this.props.res.name}`,
+                  `Join the party for 8:15PM?`,
+                  [
+                    {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                    {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
+                  ]
+                )}
+                />
+            </View>
+            <View style={styles.itemButton}>
+              <SmallButton
+                buttonText={'8:30 PM'}
+                onPress={() => Alert.alert(
+                  `${this.props.res.name}`,
+                  `Join the party for 8:30PM?`,
+                  [
+                    {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                    {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
+                  ]
+                )}
+                />
+              <SmallButton
+                buttonText={'8:45 PM'}
+                onPress={() => Alert.alert(
+                  `${this.props.res.name}`,
+                  `Join the party for 8:45PM?`,
+                  [
+                    {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                    {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
+                  ]
+                )}
+                />
+            </View>
           </View>
         </View>
-        <View style={styles.buttonContainer}>
-          <View style={styles.itemButton}>
-            <SmallButton
-              buttonText={'8:00 PM'}
-              onPress={() => Alert.alert(
-                `${this.props.res.name}`,
-                `Join the party for 8:00PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
-                  {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
-                ]
-              )}
-              />
-            <SmallButton
-              buttonText={'8:15 PM'}
-              onPress={() => Alert.alert(
-                `${this.props.res.name}`,
-                `Join the party for 8:15PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
-                  {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
-                ]
-              )}
-              />
-          </View>
-          <View style={styles.itemButton}>
-            <SmallButton
-              buttonText={'8:30 PM'}
-              onPress={() => Alert.alert(
-                `${this.props.res.name}`,
-                `Join the party for 8:30PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
-                  {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
-                ]
-              )}
-              />
-            <SmallButton
-              buttonText={'8:45 PM'}
-              onPress={() => Alert.alert(
-                `${this.props.res.name}`,
-                `Join the party for 8:45PM?`,
-                [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
-                  {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
-                ]
-              )}
-              />
-          </View>
-        </View>
-      </View>
-    );
+      );
+    } else {
+      return (
+        <Text>Loading</Text>
+      );
+    }
   }
 }
 
