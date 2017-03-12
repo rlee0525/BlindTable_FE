@@ -13,10 +13,10 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Scene key="root">
-      <Scene key="register" component={Register} title="Register"
-             hideNavBar={true} initial={true} />
-      <Scene key="authentication" component={Authentication}
-             title="Authenticate" hideNavBar={true} />
+        <Scene key="register" component={Register} title="Register"
+               hideNavBar={true} initial={true} />
+        <Scene key="authentication" component={Authentication}
+               title="Authenticate" hideNavBar={true} />
       </Scene>
     </Router>
   </Provider>

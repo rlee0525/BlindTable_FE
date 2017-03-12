@@ -21,6 +21,8 @@ class Register extends React.Component {
       name: "",
       country_code: "1",
       phone_number: "",
+      image_url: "hello",
+      description: "hello",
       errors: []
     };
   }
@@ -31,14 +33,18 @@ class Register extends React.Component {
     let user = {
       first_name: name[0],
       last_name: name[1],
-      phone_number: phoneNumber
+      phone_number: phoneNumber,
+      image_url: "hello",
+      description: "hello",
     };
+    console.log(user);
 
     this.props.registerUser(user)
       .then(response => {
         if (response.responseData.session_token) {
           let phone_number = response.responseData.phone_number;
           let currentUser = response.responseData;
+          console.log(currentUser);
           return Actions.authentication({ currentUser, phone_number });
         } else {
           this.setState({
