@@ -10,6 +10,7 @@ import {
   ScrollView
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { Button } from "../common";
 
 class Authentication extends React.Component {
   constructor(props) {
@@ -58,11 +59,7 @@ class Authentication extends React.Component {
                 />
             </View>
 
-            <TouchableHighlight style={styles.button}>
-              <Text style={styles.buttonText} onPress={this.onAuthPressed.bind(this)}>
-                Authenticate
-              </Text>
-            </TouchableHighlight>
+            <Button buttonText="Authenticate" onPress={this.onAuthPressed.bind(this)} />
             <Text style={styles.errors}>
               {this.state.errors ? this.state.errors.join("\n") : ""}
             </Text>
@@ -79,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    backgroundColor: 'rgba(0, 0, 0, 0)'
   },
   logo: {
     left: 12,
