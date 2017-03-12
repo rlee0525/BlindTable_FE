@@ -6,7 +6,8 @@ import { ScrollView,
          Text,
          Image,
          Dimensions,
-         StyleSheet } from 'react-native';
+         StyleSheet,
+         TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
 import ReservationItem from '../ReservationsIndex/ReservationItem.js';
 import { fetchReservations } from '../../actions/reservations_actions';
@@ -16,31 +17,68 @@ const { height, width } = Dimensions.get('window');
 class ReservationMap extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      markers: null,
+    };
+  }
+
+  componentDidMount() {
+    let restaurants = this.props.reservations.map( e => {
+      return {
+        id: e['rid'],
+        latlng: {
+          latitude: parseInt(e['latitude']),
+          longitude: parseInt(e['longitude'])
+        }
+      };
+    });
+
+    this.setState({
+      markers: restaurants
+    });
   }
 
   renderReservation() {
-    return this.props.reservations.map( res => (
-      <ReservationItem res={res} key={res.phone_number}/>
-    ));
+    let res = this.props.reservations[0];
+    return <ReservationItem res={res} key={res.phone_number}/>;
   }
 
   render() {
+    let initialRestaurant = this.props.reservations[0];
+    let latitude = parseInt(initialRestaurant.latitude);
+    let longitude = parseInt(initialRestaurant.longitude);
+
     console.log(this.props);
+    console.log(this.state);
     return (
-      <View style={{ position: 'relative', height: 350}}>
+      <ScrollView style={{ height: 384}}>
         <MapView
-          style={{ left:0, right: 0, top:0, bottom: 0, position: 'absolute' }}
+          style={{ height: 384 }}
           initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: latitude,
+            longitude: longitude,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
-          }}
-        />
+          }}>
+          {this.state.markers && this.state.markers.map(marker => {
+            return (
+              <MapView.Marker
+                title={"hi"}
+                key={marker.id}
+                coordinate={marker.latlng}
+              />
+            );
+          })}
+        </MapView>
         <View style={styles.detailContainer}>
           { this.renderReservation() }
         </View>
-      </View>
+        <TouchableOpacity style={styles.switchView}
+                          onPress={Actions.reservationIndex}>
+          <Text style={styles.viewText}>{"List View"}</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
@@ -60,8 +98,18 @@ const styles = {
   },
   detailContainer: {
     alignSelf: 'center',
-    top: 350,
     width: "100%"
+  },
+  switchView: {
+    width: "100%",
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ed6d72',
+  },
+  viewText: {
+    fontSize: 16,
+    color: 'white'
   }
 };
 
