@@ -29,7 +29,8 @@ class ReservationsIndex extends React.Component {
             { this.renderReservations() }
           </ScrollView>
         </View>
-        <TouchableOpacity style={styles.switchView}>
+        <TouchableOpacity style={styles.switchView}
+                          onPress={Actions.reservationMap}>
           <Text style={styles.viewText}>{"Map View"}</Text>
         </TouchableOpacity>
       </Image>
