@@ -89,7 +89,7 @@ const styles = {
     flexDirection: "column",
     padding: "7%",
     borderBottomWidth: 1,
-    borderColor: '#ed6d72',
+    borderColor: '#edb6ba',
   },
   containerStyle: {
     elevation: 1,
