@@ -22,7 +22,8 @@ class ReservationsIndex extends React.Component {
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.containerStyle}>
         <TouchableOpacity style={styles.back}>
-          <Text style={styles.backText}>{"< Back"}</Text>
+          <Text style={styles.backText}
+            onPress={Actions.home}>{"< Back"}</Text>
         </TouchableOpacity>
         <View style={styles.container}>
           <ScrollView style={styles.scrollContainer}>
