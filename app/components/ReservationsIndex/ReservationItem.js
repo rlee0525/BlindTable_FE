@@ -6,17 +6,13 @@ import { SmallButton } from '../common';
 class ReservationItem extends React.Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
-
     this.state = {
       buttonOne: false,
       buttonTwo: false,
       buttonThree: false,
       buttonFour: false,
     };
-=======
-    console.log('item');
-    console.log(props);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -27,7 +23,6 @@ class ReservationItem extends React.Component {
       party_size: 1
     };
     this.props.createReservation(res);
->>>>>>> 30b9acf827e42de59a345b236b866868a067954b
   }
 
   render() {
@@ -48,59 +43,6 @@ class ReservationItem extends React.Component {
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.itemButton}>
-<<<<<<< HEAD
-            <TouchableOpacity style={[styles.button, this.state.buttonOne && styles.buttonAlt]}
-              onPress={() => Alert.alert(`${this.props.res.name}`,
-                                          `Join the party for 8:00PM?`,
-                                          [
-                                            {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                            {text: 'Yes', onPress: () => this.setState({buttonOne: true})},
-                                          ]
-            )}>
-              <Text style={styles.buttonText}>
-                {'8:00 PM'}
-              </Text>
-            </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, this.state.buttonTwo && styles.buttonAlt]}
-                onPress={() => Alert.alert(`${this.props.res.name}`,
-                                            `Join the party for 8:15PM?`,
-                                            [
-                                              {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                              {text: 'Yes', onPress: () => this.setState({buttonTwo: true})},
-                                            ]
-              )}>
-                <Text style={styles.buttonText}>
-                  {'8:15 PM'}
-                </Text>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.itemButton}>
-            <TouchableOpacity style={[styles.button, this.state.buttonThree && styles.buttonAlt]}
-              onPress={() => Alert.alert(`${this.props.res.name}`,
-                                          `Join the party for 8:30PM?`,
-                                          [
-                                            {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                            {text: 'Yes', onPress: () => this.setState({buttonThree: true})},
-                                          ]
-            )}>
-              <Text style={styles.buttonText}>
-                {'8:30 PM'}
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, this.state.buttonFour && styles.buttonAlt]}
-              onPress={() => Alert.alert(`${this.props.res.name}`,
-                                          `Join the party for 8:45PM?`,
-                                          [
-                                            {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                            {text: 'Yes', onPress: () => this.setState({buttonFour: true})},
-                                          ]
-            )}>
-              <Text style={styles.buttonText}>
-                {'8:45 PM'}
-              </Text>
-            </TouchableOpacity>
-
-=======
             <SmallButton
               buttonText={'8:00 PM'}
               onPress={() => Alert.alert(
@@ -147,7 +89,6 @@ class ReservationItem extends React.Component {
                 ]
               )}
               />
->>>>>>> 30b9acf827e42de59a345b236b866868a067954b
           </View>
         </View>
       </View>
