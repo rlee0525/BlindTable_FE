@@ -21,7 +21,7 @@ const styles = {
     justifyContent: 'center',
     borderColor: 'white',
     borderWidth: 2,
-    borderRadius: 20,
+    borderRadius: 30,
   },
   buttonText: {
     fontSize: 16,
