@@ -11,7 +11,7 @@ import { ScrollView,
          Alert } from 'react-native';
 import MapView from 'react-native-maps';
 import ReservationItem from '../ReservationsIndex/ReservationItem.js';
-import { fetchReservations } from '../../actions/reservations_actions';
+import { fetchReservations, createReservation } from '../../actions/reservations_actions';
 import { SmallButton } from '../common';
 
 const { height, width } = Dimensions.get('window');
@@ -73,78 +73,8 @@ class ReservationMap extends React.Component {
     } else {
       res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
     }
-    // return <ReservationItem res={res} key={res.phone_number}/>;
-    return (
-      <View style={styles.container}>
-        <View style={styles.details}>
-          <Image source={{uri: res.image}} style={{height: 75, width: 75}}>
-          </Image>
-          <View style={styles.containerStyle}>
 
-            <View style={styles.infoStyle}>
-              <Text style={styles.name}>{res.name}</Text>
-              <Text style={styles.address}>{res.address}</Text>
-              <Text style={styles.city}>{res.city}, {res.state}, {res.postal_code}</Text>
-            </View>
-
-          </View>
-        </View>
-        <View style={styles.buttonContainer}>
-          <View style={styles.itemButton}>
-            <TouchableOpacity style={[styles.button, this.state.buttonOne && styles.buttonAlt]}
-              onPress={() => Alert.alert(`${res.name}`,
-                                          `Join the party for 8:00PM?`,
-                                          [
-                                            {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                            {text: 'Yes', onPress: () => this.setState({buttonOne: true})},
-                                          ]
-            )}>
-              <Text style={styles.buttonText}>
-                {'8:00 PM'}
-              </Text>
-            </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, this.state.buttonTwo && styles.buttonAlt]}
-                onPress={() => Alert.alert(`${res.name}`,
-                                            `Join the party for 8:15PM?`,
-                                            [
-                                              {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                              {text: 'Yes', onPress: () => this.setState({buttonTwo: true})},
-                                            ]
-              )}>
-                <Text style={styles.buttonText}>
-                  {'8:15 PM'}
-                </Text>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.itemButton}>
-            <TouchableOpacity style={[styles.button, this.state.buttonThree && styles.buttonAlt]}
-              onPress={() => Alert.alert(`${res.name}`,
-                                          `Join the party for 8:30PM?`,
-                                          [
-                                            {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                            {text: 'Yes', onPress: () => this.setState({buttonThree: true})},
-                                          ]
-            )}>
-              <Text style={styles.buttonText}>
-                {'8:30 PM'}
-              </Text>
-            </TouchableOpacity>
-              <TouchableOpacity style={[styles.button, this.state.buttonFour && styles.buttonAlt]}
-                onPress={() => Alert.alert(`${res.name}`,
-                                            `Join the party for 8:45PM?`,
-                                            [
-                                              {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                                              {text: 'Yes', onPress: () => this.setState({buttonFour: true})},
-                                            ]
-              )}>
-                <Text style={styles.buttonText}>
-                  {'8:45 PM'}
-                </Text>
-              </TouchableOpacity>
-          </View>
-        </View>
-      </View>
-    );
+    return <ReservationItem res={res} key={res.phone_number} createReservation={this.props.createReservation}/>;
   }
 
   render() {
@@ -281,7 +211,8 @@ const mapStateToProps = ({reservations}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchReservations: query => dispatch(fetchReservations(query))
+  fetchReservations: query => dispatch(fetchReservations(query)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(

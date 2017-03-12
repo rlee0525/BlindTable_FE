@@ -3,9 +3,10 @@ import { ScrollView, View, Text, Image, Alert, TouchableOpacity } from 'react-na
 
 import { SmallButton } from '../common';
 
-class RestaurantItem extends React.Component {
+class ReservationItem extends React.Component {
   constructor(props) {
     super(props);
+<<<<<<< HEAD
 
     this.state = {
       buttonOne: false,
@@ -13,6 +14,20 @@ class RestaurantItem extends React.Component {
       buttonThree: false,
       buttonFour: false,
     };
+=======
+    console.log('item');
+    console.log(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(time) {
+    const res = {
+      restaurant_id: this.props.res.rid,
+      date_time: time,
+      party_size: 1
+    };
+    this.props.createReservation(res);
+>>>>>>> 30b9acf827e42de59a345b236b866868a067954b
   }
 
   render() {
@@ -33,6 +48,7 @@ class RestaurantItem extends React.Component {
         </View>
         <View style={styles.buttonContainer}>
           <View style={styles.itemButton}>
+<<<<<<< HEAD
             <TouchableOpacity style={[styles.button, this.state.buttonOne && styles.buttonAlt]}
               onPress={() => Alert.alert(`${this.props.res.name}`,
                                           `Join the party for 8:00PM?`,
@@ -84,6 +100,54 @@ class RestaurantItem extends React.Component {
               </Text>
             </TouchableOpacity>
 
+=======
+            <SmallButton
+              buttonText={'8:00 PM'}
+              onPress={() => Alert.alert(
+                `${this.props.res.name}`,
+                `Join the party for 8:00PM?`,
+                [
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
+                ]
+              )}
+              />
+            <SmallButton
+              buttonText={'8:15 PM'}
+              onPress={() => Alert.alert(
+                `${this.props.res.name}`,
+                `Join the party for 8:15PM?`,
+                [
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
+                ]
+              )}
+              />
+          </View>
+          <View style={styles.itemButton}>
+            <SmallButton
+              buttonText={'8:30 PM'}
+              onPress={() => Alert.alert(
+                `${this.props.res.name}`,
+                `Join the party for 8:30PM?`,
+                [
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
+                ]
+              )}
+              />
+            <SmallButton
+              buttonText={'8:45 PM'}
+              onPress={() => Alert.alert(
+                `${this.props.res.name}`,
+                `Join the party for 8:45PM?`,
+                [
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
+                ]
+              )}
+              />
+>>>>>>> 30b9acf827e42de59a345b236b866868a067954b
           </View>
         </View>
       </View>
@@ -156,4 +220,4 @@ const styles = {
   }
 };
 
-export default RestaurantItem;
+export default ReservationItem;
