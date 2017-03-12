@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/api_util';
-import { receiveErrors } from 'authentication_actions';
+import { receiveErrors } from './authentication_actions';
 
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const CLEAR_RESERVATIONS = 'CLEAR_RESERVATIONS';

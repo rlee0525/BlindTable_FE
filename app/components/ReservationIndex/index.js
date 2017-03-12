@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { View, Text } from 'react-native';
 
-import ReservationItem from './ReservationItem.js';
+import RestaurantItem from './RestaurantItem.js';
 
 import { fetchReservations } from '../../actions/reservations_actions';
 
