@@ -29,8 +29,8 @@ class RestaurantItem extends React.Component {
             <SmallButton
               buttonText={'8:00 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:00PM?`,
+                `${this.props.res.name}`,
+                `Would you like to make a reservation at ${this.props.res.name} for 8:00PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -40,8 +40,8 @@ class RestaurantItem extends React.Component {
             <SmallButton
               buttonText={'8:15 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:15PM?`,
+                `${this.props.res.name}`,
+                `Would you like to make a reservation at ${this.props.res.name} for 8:15PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -53,8 +53,8 @@ class RestaurantItem extends React.Component {
             <SmallButton
               buttonText={'8:30 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:30PM?`,
+                `${this.props.res.name}`,
+                `Would you like to make a reservation at ${this.props.res.name} for 8:30PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
@@ -64,8 +64,8 @@ class RestaurantItem extends React.Component {
             <SmallButton
               buttonText={'8:45 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:45PM?`,
+                `${this.props.res.name}`,
+                `Would you like to make a reservation at ${this.props.res.name} for 8:45PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!')},
                   {text: 'Yes', onPress: () => console.log('OK Pressed!')},
