@@ -5,19 +5,16 @@ import configureStore from './store/store';
 // import Loading from './components/Loading';
 import Register from './components/Register';
 import Authentication from './components/Authentication';
-// import Home from './components/Home';
+import Home from './components/Home';
 
 const store = configureStore();
 
 const App = () => (
   <Provider store={store}>
     <Router>
-      <Scene key="root">
-      <Scene key="register" component={Register} title="Register"
-             hideNavBar={true} initial={true} />
-      <Scene key="authentication" component={Authentication}
-             title="Authenticate" hideNavBar={true} />
-      </Scene>
+      <Scene key="Home" component={Home} title="Home" hideNavBar={true} initial />
+      <Scene key="register" component={Register} title="Register" hideNavBar={true}  />
+      <Scene key="authentication" component={Authentication} title="Authenticate" hideNavBar={true} />
     </Router>
   </Provider>
 );
