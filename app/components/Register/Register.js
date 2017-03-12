@@ -63,7 +63,7 @@ class Register extends React.Component {
           <ScrollView keyboardShouldPersistTaps='never'>
             <Image source={require('../../../assets/images/logo.png')}
                    style={styles.logo}/>
-            <Text style={styles.welcomeText}>Welcome to BlindTable.</Text>
+            <Text style={styles.welcomeText}>Welcome to BlindTable</Text>
             <Text style={styles.inputTitle}>FIRST NAME</Text>
             <View style={styles.textBox}>
               <TextInput
@@ -101,38 +101,35 @@ class Register extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0)'
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+    flexDirection: 'column',
+    padding: "7%"
   },
   welcomeText: {
-    color: 'white',
-    marginLeft: "5%",
-    marginBottom: "5%",
+    fontFamily: "Arial",
     fontSize: 25,
+    color: "white",
     letterSpacing: 1,
+    marginBottom: "10%"
   },
   inputTitle: {
     color: 'white',
-    marginLeft: "5%",
     marginTop: "10%",
     fontSize: 13,
     fontWeight: 'bold',
   },
   logo: {
-    marginTop: "25%",
+    marginTop: "20%",
     marginBottom: "10%",
-    marginLeft: "5%",
-    height: 40,
-    width: 40,
+    height: 50,
+    width: 50,
   },
   textBox: {
     borderBottomWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.7)',
     flexDirection: 'row',
-    marginLeft: "5%",
-    marginRight: "5%",
   },
   input: {
     flex: 0.85,

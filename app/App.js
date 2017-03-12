@@ -16,8 +16,8 @@ const App = () => (
   <Provider store={store}>
     <Router>
       <Scene key="home" component={Home} title="Home" hideNavBar={true} />
-      <Scene key="reservationIndex" component={ReservationsIndex} title="Restaurant Index" hideNavBar={true} initial/>
-      <Scene key="register" component={Register} title="Register" hideNavBar={true} />
+      <Scene key="reservationIndex" component={ReservationsIndex} title="Restaurant Index" hideNavBar={true} />
+      <Scene key="register" component={Register} title="Register" hideNavBar={true} initial />
       <Scene key="authentication" component={Authentication} title="Authenticate" hideNavBar={true} />
     </Router>
   </Provider>
