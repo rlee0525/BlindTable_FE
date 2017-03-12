@@ -46,20 +46,24 @@ class Authentication extends React.Component {
   render() {
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.container}>
-        <View style={styles.container}>
+        <View style={styles.viewContainer}>
           <ScrollView keyboardShouldPersistTaps='never'>
-            <Image source={require('../../../assets/images/logo.png')} style={styles.logo}/>
-
+            <Text style={styles.inputTitle}>VERIFICATION CODE</Text>
             <View style={styles.textBox}>
               <TextInput
                 onChangeText={(authyId) => this.setState({ authyId })}
-                style={styles.input} placeholder="Verification Code"
-                placeholderTextColor="rgba(255, 255, 255, 0.7)"
-                autoFocus={false}
+                style={styles.input} autoFocus={true}
                 />
             </View>
 
-            <Button buttonText="Authenticate" onPress={this.onAuthPressed.bind(this)} />
+
+            <TouchableHighlight style={styles.button}
+                                onPress={this.onAuthPressed.bind(this)}>
+              <Text style={styles.buttonText}>
+                Submit
+              </Text>
+            </TouchableHighlight>
+
             <Text style={styles.errors}>
               {this.state.errors ? this.state.errors.join("\n") : ""}
             </Text>
@@ -73,10 +77,19 @@ class Authentication extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0)'
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    padding: "7%",
+  },
+  inputTitle: {
+    color: 'white',
+    marginTop: "10%",
+    fontSize: 15,
+    fontWeight: 'bold',
+    alignSelf: 'center',
   },
   logo: {
     left: 12,
@@ -86,31 +99,21 @@ const styles = StyleSheet.create({
     marginBottom: 140
   },
   textBox: {
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.7)',
+    flexDirection: 'row',
+    marginLeft: '35%',
+    marginRight: '35%',
+    marginTop: '5%',
   },
   input: {
+    flex: 0.85,
     marginTop: 10,
     alignSelf: 'stretch',
-    height: 50,
+    height: 30,
     fontSize: 15,
     fontFamily: 'Arial',
     color: 'white',
-    textAlign: 'center',
-  },
-  button: {
-    marginTop: 45,
-    height: 50,
-    backgroundColor: '#0091EA',
-    paddingLeft: 40,
-    paddingRight: 40,
-    justifyContent: 'center',
-  },
-  buttonText: {
-    fontSize: 16,
-    color: '#FFF',
-    alignSelf: 'center',
-    fontFamily: 'Arial'
   },
   errors: {
     fontSize: 11,
@@ -120,6 +123,26 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)',
     marginTop: 15,
     fontFamily: 'Arial'
+  },
+  button: {
+    marginTop: '12%',
+    alignSelf: 'center',
+    height: 40,
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+    paddingLeft: 10,
+    paddingRight: 10,
+    justifyContent: 'center',
+    borderColor: 'white',
+    borderWidth: 2,
+    borderRadius: 30,
+    width: "35%"
+  },
+  buttonText: {
+    fontSize: 16,
+    color: '#FFF',
+    alignSelf: 'center',
+    fontFamily: 'Arial',
+    letterSpacing: 0.5
   }
 });
 
