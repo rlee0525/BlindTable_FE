@@ -1,33 +1,32 @@
 import React from 'react';
-import { TouchableHighlight, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
 const SmallButton = props => (
-  <TouchableHighlight style={styles.button}
+  <TouchableOpacity style={styles.button}
                       onPress={props.onPress}>
     <Text style={styles.buttonText}>
       {props.buttonText}
     </Text>
-  </TouchableHighlight>
+  </TouchableOpacity>
 );
 
 const styles = {
   button: {
-    marginTop: '10%',
-    alignSelf: 'center',
-    height: 50,
-    backgroundColor: 'rgba(0, 0, 0, 0)',
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#ed6d72',
     paddingLeft: 40,
     paddingRight: 40,
     justifyContent: 'center',
-    borderColor: 'black',
-    borderWidth: 2,
-    borderRadius: 30,
-    width: "5%"
+    borderRadius: 10,
+    marginRight: 20
   },
   buttonText: {
+    zIndex: 30,
     fontSize: 16,
-    color: 'black',
-    alignSelf: 'center',
+    color: 'white',
     fontFamily: 'Arial',
     letterSpacing: 0.5
   }
