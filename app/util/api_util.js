@@ -1,5 +1,7 @@
+const baseUrl = 'http://localhost:3000/api';
+
 export const registerUser = user => (
-  fetch('http://localhost:3000/api/users', {
+  fetch(`${baseUrl}/users`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -12,7 +14,7 @@ export const registerUser = user => (
 );
 
 export const authenticateUser = user => (
-  fetch('http://localhost:3000/api/session', {
+  fetch(`${baseUrl}/session`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -25,7 +27,7 @@ export const authenticateUser = user => (
 );
 
 export const fetchReservations = query => (
-  fetch('http://localhost:3000/api/reservations', {
+  fetch(`${baseUrl}/reservations`, {
     method: "GET",
     headers: {
       'Accept': 'application/json',
@@ -38,7 +40,7 @@ export const fetchReservations = query => (
 );
 
 export const createReservation = query => (
-  fetch('http://localhost:3000/api/reservations', {
+  fetch(`${baseUrl}/reservations`, {
     method: "POST",
     headers: {
       'Accept': 'application/json',
