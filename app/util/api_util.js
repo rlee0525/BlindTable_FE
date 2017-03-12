@@ -23,3 +23,16 @@ export const authenticateUser = user => (
     })
   })
 );
+
+export const fetchReservations = query => (
+  fetch('localhost:3000/api/reservations', {
+    method: "GET",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query
+    })
+  })
+)
