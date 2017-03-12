@@ -12,7 +12,8 @@ const store = configureStore();
 const App = () => (
   <Provider store={store}>
     <Router>
-      <Scene key="Home" component={Home} title="Home" hideNavBar={true} initial />
+      <Scene key="home" component={Home} title="Home" hideNavBar={true} />
+      <Scene key="restaurantIndex" component={RestaurantIndex} title="Restaurant Index" hideNavBar={true} initial />
       <Scene key="register" component={Register} title="Register" hideNavBar={true}  />
       <Scene key="authentication" component={Authentication} title="Authenticate" hideNavBar={true} />
     </Router>
