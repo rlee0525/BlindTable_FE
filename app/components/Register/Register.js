@@ -23,6 +23,8 @@ class Register extends React.Component {
       name: "",
       country_code: "1",
       phone_number: "",
+      image_url: "hello",
+      description: "hello",
       errors: []
     };
   }
@@ -33,7 +35,9 @@ class Register extends React.Component {
     let user = {
       first_name: name[0],
       last_name: name[1],
-      phone_number: phoneNumber
+      phone_number: phoneNumber,
+      image_url: "hello",
+      description: "hello",
     };
 
     this.props.registerUser(user)
@@ -52,11 +56,12 @@ class Register extends React.Component {
 
   render() {
     return (
-      <Image source={require('../../images/temp.jpg')} style={styles.container}>
+      <Image source={require('../../../assets/images/background.png')} style={styles.container}>
         <View style={styles.container}>
           <ScrollView keyboardShouldPersistTaps='never'>
-            <Image source={require('../../images/logo.png')}
+            <Image source={require('../../../assets/images/logo.png')}
                    style={styles.logo}/>
+                 <Text style={styles.welcomeText}>WELCOME TO BLINDTABLE</Text>
             <View style={styles.textBox}>
               <Icon style={styles.icon} name="user" size={21}
                     color="rgba(255, 255, 255, 0.8)" />
@@ -97,16 +102,18 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+    backgroundColor: 'rgba(0, 0, 0, 0)'
+  },
+  welcomeText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
   logo: {
-    left: 5,
-    alignSelf: 'center',
-    borderRadius: 5,
-    marginTop: 120,
-    marginBottom: 120,
-    width: 280,
-    height: 36,
+    marginTop: "30%",
+    marginBottom: "10%",
+    marginLeft: "10%",
+    height: 40,
+    width: 40,
   },
   textBox: {
     borderBottomWidth: 1,

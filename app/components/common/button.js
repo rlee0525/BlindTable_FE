@@ -12,12 +12,16 @@ const Button = props => (
 
 const styles = {
   button: {
-    marginTop: 130,
+    marginTop: '10%',
+    alignSelf: 'center',
     height: 50,
-    backgroundColor: '#E53935',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     paddingLeft: 40,
     paddingRight: 40,
     justifyContent: 'center',
+    borderColor: 'white',
+    borderWidth: 2,
+    borderRadius: 20,
   },
   buttonText: {
     fontSize: 16,
@@ -25,6 +29,6 @@ const styles = {
     alignSelf: 'center',
     fontFamily: 'Arial'
   }
-}
+};
 
 export { Button };

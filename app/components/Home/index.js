@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Picker
+  Picker,
+  Image
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
@@ -16,82 +17,111 @@ class Home extends React.Component {
     this.state = {
       hour: "12",
       ampm: "pm"
-    }
+    };
   }
 
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.headerStyle}>
-          <Text style={styles.textHeader}>Pick a Time</Text>
-        </View>
-        <View style={styles.pickerStyle}>
-          <Picker
-            style={styles.individualPicker}
-            selectedValue={this.state.hour}
-            onValueChange={ hr => this.setState({hour: hr})}>
-            <Picker.Item label="01" value="01" />
-            <Picker.Item label="02" value="02" />
-            <Picker.Item label="03" value="03" />
-            <Picker.Item label="04" value="04" />
-            <Picker.Item label="05" value="05" />
-            <Picker.Item label="06" value="06" />
-            <Picker.Item label="07" value="07" />
-            <Picker.Item label="08" value="08" />
-            <Picker.Item label="09" value="09" />
-            <Picker.Item label="11" value="11" />
-            <Picker.Item label="12" value="12" />
-          </Picker>
+      <Image source={require('../../../assets/images/background.png')}
+        style={styles.backgroundImage}>
 
-          <Picker
-            style={styles.individualPicker}
-            selectedValue={this.state.ampm}
-            onValueChange={ m => this.setState({ampm: m})}>
-            <Picker.Item label="AM" value="am" />
-            <Picker.Item label="PM" value="pm" />
-          </Picker>
+        <View style={styles.container}>
+          <Image source={require('../../../assets/images/logo.png')}
+            style={styles.logo}/>
+          <Text style={styles.welcomeText}>Welcome to BlindTable</Text>
+          <View style={styles.headerStyle}>
+            <Text style={styles.textHeader}>PICK A TIME</Text>
+          </View>
+          <View style={styles.pickerStyle}>
+            <Picker
+              style={styles.individualPicker}
+              selectedValue={this.state.hour}
+              onValueChange={ hr => this.setState({hour: hr})}>
+              <Picker.Item color="white" label="01" value="01" />
+              <Picker.Item color="white" label="02" value="02" />
+              <Picker.Item color="white" label="03" value="03" />
+              <Picker.Item color="white" label="04" value="04" />
+              <Picker.Item color="white" label="05" value="05" />
+              <Picker.Item color="white" label="06" value="06" />
+              <Picker.Item color="white" label="07" value="07" />
+              <Picker.Item color="white" label="08" value="08" />
+              <Picker.Item color="white" label="09" value="09" />
+              <Picker.Item color="white" label="11" value="11" />
+              <Picker.Item color="white" label="12" value="12" />
+            </Picker>
+
+            <Picker
+              style={styles.individualPicker}
+              selectedValue={this.state.ampm}
+              onValueChange={ m => this.setState({ampm: m})}>
+              <Picker.Item color="white" label="AM" value="am" />
+              <Picker.Item color="white" label="PM" value="pm" />
+            </Picker>
+          </View>
         </View>
-      </View>
+      </Image>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    width: undefined,
+    height: undefined,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  logo: {
+    marginTop: "30%",
+    marginBottom: "10%",
+    height: 50,
+    width: 50,
+  },
+  welcomeText: {
+    fontFamily: "Arial",
+    fontSize: 25,
+    color: "white",
+    letterSpacing: 1,
+    marginBottom: "15%"
+  },
   container: {
     flex: 1,
     width: null,
     height: null,
     // backgroundColor: 'rgba(0, 0, 0, 0.7)',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
+    padding: "7%"
   },
   pickerStyle: {
-    flex: 3,
     flexDirection: 'row',
     alignItems: 'flex-start',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderBottomColor: 'white'
   },
   individualPicker: {
     width: "40%"
   },
   headerStyle: {
     width: "100%",
-    flex: 2,
     flexDirection: 'row',
     alignItems: 'flex-end',
-    justifyContent: 'center'
   },
   textHeader: {
-    textAlign: "center",
+    fontFamily: "ArialMT",
+    fontWeight: '500',
+    fontSize: 15,
+    color: "white",
+    marginBottom: "10%"
   }
 });
 
 
 const mapStateToProps = (state) => ({
 
-})
+});
 
 const mapDispatchToProps = dispatch => ({
 });
