@@ -91,13 +91,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
   },
-  logo: {
-    left: 12,
-    alignSelf: 'center',
-    borderRadius: 5,
-    marginTop: 120,
-    marginBottom: 140
-  },
   textBox: {
     borderBottomWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.7)',
