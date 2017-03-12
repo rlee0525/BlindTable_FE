@@ -19,7 +19,8 @@ let _defaultState = [
     "metro_name":"San Francisco Bay Area",
     "reservation_url":"http://www.opentable.com/restaurant/profile/2",
     "profile_url":"http://www.opentable.com/restaurant/profile/2",
-    "is_restaurant_in_group":false
+    "is_restaurant_in_group":false,
+    "number_people": 3
   },
   {
     "rid":4,
@@ -36,7 +37,8 @@ let _defaultState = [
     "metro_name":"San Francisco Bay Area",
     "reservation_url":"http://www.opentable.com/restaurant/profile/4",
     "profile_url":"http://www.opentable.com/restaurant/profile/4",
-    "is_restaurant_in_group":false
+    "is_restaurant_in_group":false,
+    "number_people": null
   }
 ];
 
