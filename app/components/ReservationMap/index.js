@@ -20,7 +20,10 @@ class ReservationMap extends React.Component {
 
     this.state = {
       markers: null,
+      selectedId: null
     };
+
+    this.handleMarkerPress = this.handleMarkerPress.bind(this);
   }
 
   componentDidMount() {
@@ -40,8 +43,19 @@ class ReservationMap extends React.Component {
     });
   }
 
+  handleMarkerPress(id) {
+    this.setState({
+      selectedId: id
+    });
+  }
+
   renderReservation() {
-    let res = this.props.reservations[0];
+    let res;
+    if (this.state.selectedId === null) {
+      res = this.props.reservations[0];
+    } else {
+      res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
+    }
     return <ReservationItem res={res} key={res.phone_number}/>;
   }
 
@@ -68,6 +82,7 @@ class ReservationMap extends React.Component {
                 title={marker.name}
                 key={marker.id}
                 coordinate={marker.latlng}
+                onSelect={() => {this.setState({selectedId: marker.id});}}
               />
             );
           })}
