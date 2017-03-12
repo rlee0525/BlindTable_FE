@@ -44,10 +44,10 @@ class Authentication extends React.Component {
 
   render() {
     return (
-      <Image source={require('../../images/temp.jpg')} style={styles.container}>
+      <Image source={require('../../../assets/images/background.png')} style={styles.container}>
         <View style={styles.container}>
           <ScrollView keyboardShouldPersistTaps='never'>
-            <Image source={require('../../images/logo.png')} style={styles.logo}/>
+            <Image source={require('../../../assets/images/logo.png')} style={styles.logo}/>
 
             <View style={styles.textBox}>
               <TextInput

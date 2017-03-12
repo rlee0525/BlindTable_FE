@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Picker,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
@@ -59,6 +60,9 @@ class Home extends React.Component {
               <Picker.Item color="white" label="PM" value="pm" />
             </Picker>
           </View>
+          <TouchableHighlight style={styles.submitButton}>
+            <Text style={styles.submitText}>Find Reservations</Text>
+          </TouchableHighlight>
         </View>
       </Image>
     );
@@ -75,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   logo: {
-    marginTop: "30%",
+    marginTop: "20%",
     marginBottom: "10%",
     height: 50,
     width: 50,
@@ -99,7 +103,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    borderBottomColor: 'white'
   },
   individualPicker: {
     width: "40%"
@@ -115,6 +118,13 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "white",
     marginBottom: "10%"
+  },
+  submitText: {
+    color: "white"
+  },
+  submitButton: {
+    height: 40,
+    width: "100%"
   }
 });
 
