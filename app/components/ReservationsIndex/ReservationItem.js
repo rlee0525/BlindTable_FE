@@ -6,7 +6,7 @@ import { SmallButton } from '../common';
 const RestaurantItem = props => (
   <View style={styles.container}>
     <View style={styles.details}>
-      <Image source={require('../../../assets/images/sample.jpg')} style={{height: 75, width: 75}}>
+      <Image source={{uri: props.res.image}} style={{height: 75, width: 75}}>
       </Image>
       <View style={styles.containerStyle}>
 
