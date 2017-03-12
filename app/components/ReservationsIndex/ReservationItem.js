@@ -3,9 +3,21 @@ import { ScrollView, View, Text, Image, Alert } from 'react-native';
 
 import { SmallButton } from '../common';
 
-class RestaurantItem extends React.Component {
+class ReservationItem extends React.Component {
   constructor(props) {
     super(props);
+    console.log('item');
+    console.log(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(time) {
+    const res = {
+      restaurant_id: this.props.res.rid,
+      date_time: time,
+      party_size: 1
+    };
+    this.props.createReservation(res);
   }
 
   render() {
@@ -32,8 +44,8 @@ class RestaurantItem extends React.Component {
                 `Thirsty Bear`,
                 `Would you like to make a reservation at Thirsty Bear for 8:00PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
                 ]
               )}
               />
@@ -43,8 +55,8 @@ class RestaurantItem extends React.Component {
                 `Thirsty Bear`,
                 `Would you like to make a reservation at Thirsty Bear for 8:15PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
                 ]
               )}
               />
@@ -56,8 +68,8 @@ class RestaurantItem extends React.Component {
                 `Thirsty Bear`,
                 `Would you like to make a reservation at Thirsty Bear for 8:30PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
                 ]
               )}
               />
@@ -67,8 +79,8 @@ class RestaurantItem extends React.Component {
                 `Thirsty Bear`,
                 `Would you like to make a reservation at Thirsty Bear for 8:45PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
                 ]
               )}
               />
@@ -113,4 +125,4 @@ const styles = {
   }
 };
 
-export default RestaurantItem;
+export default ReservationItem;

@@ -5,16 +5,21 @@ import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
 
 import ReservationItem from './ReservationItem.js';
 
-import { fetchReservations } from '../../actions/reservations_actions';
+import { fetchReservations, createReservation } from '../../actions/reservations_actions';
 
 class ReservationsIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.renderReservations = this.renderReservations.bind(this);
   }
 
   renderReservations() {
     return this.props.reservations.map( res => (
-      <ReservationItem res={res} key={res.phone_number}/>
+      <ReservationItem
+        res={res}
+        test={'test'}
+        createReservation={this.props.createReservation} />
     ));
   }
 
@@ -90,7 +95,8 @@ const mapStateToProps = ({reservations}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchReservations: query => dispatch(fetchReservations(query))
+  fetchReservations: query => dispatch(fetchReservations(query)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(

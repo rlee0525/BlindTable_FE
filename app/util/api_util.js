@@ -26,28 +26,29 @@ export const authenticateUser = user => (
   })
 );
 
-export const fetchReservations = query => (
+export const fetchReservations = (reservation) => (
   fetch(`${baseUrl}/reservations`, {
     method: "GET",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-      query
-    })
+    data: { reservation }
   })
 );
 
-export const createReservation = query => (
-  fetch(`${baseUrl}/reservations`, {
+export const createReservation = reservation => {
+  console.log('at create util');
+
+  console.log(reservation);
+  return fetch(`${baseUrl}/reservations`, {
     method: "POST",
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      query
+      reservation
     })
   })
-);
+};

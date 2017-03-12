@@ -10,7 +10,7 @@ import { ScrollView,
          TouchableOpacity } from 'react-native';
 import MapView from 'react-native-maps';
 import ReservationItem from '../ReservationsIndex/ReservationItem.js';
-import { fetchReservations } from '../../actions/reservations_actions';
+import { fetchReservations, createReservation } from '../../actions/reservations_actions';
 
 const { height, width } = Dimensions.get('window');
 
@@ -56,7 +56,7 @@ class ReservationMap extends React.Component {
     } else {
       res = this.props.reservations.filter((rez) => { return rez.rid === this.state.selectedId; })[0];
     }
-    return <ReservationItem res={res} key={res.phone_number}/>;
+    return <ReservationItem res={res} key={res.phone_number} createReservation={this.props.createReservation}/>;
   }
 
   render() {
@@ -134,7 +134,8 @@ const mapStateToProps = ({reservations}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchReservations: query => dispatch(fetchReservations(query))
+  fetchReservations: query => dispatch(fetchReservations(query)),
+  createReservation: reservation => dispatch(createReservation(reservation))
 });
 
 export default connect(
