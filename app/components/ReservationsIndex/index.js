@@ -29,6 +29,9 @@ class ReservationsIndex extends React.Component {
             { this.renderReservations() }
           </ScrollView>
         </View>
+        <TouchableOpacity style={styles.switchView}>
+          <Text style={styles.viewText}>{"Map View"}</Text>
+        </TouchableOpacity>
       </Image>
     );
   }
@@ -68,6 +71,16 @@ const styles = {
     alignSelf: 'center',
     width: "100%"
   },
+  switchView: {
+    width: "100%",
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  viewText: {
+    fontSize: 16,
+    color: 'white'
+  }
 };
 
 const mapStateToProps = ({reservations}) => ({
