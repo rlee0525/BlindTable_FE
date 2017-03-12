@@ -15,6 +15,9 @@ import { fetchReservations } from '../../actions/reservations_actions';
 import { SmallButton } from '../common';
 
 const { height, width } = Dimensions.get('window');
+const earthRadiusInKM = 6371;
+const radiusInKM = 3;
+const aspectRatio = 1;
 
 class ReservationMap extends React.Component {
   constructor(props) {
@@ -49,6 +52,14 @@ class ReservationMap extends React.Component {
     this.setState({
       selectedId: id
     });
+  }
+
+  deg2rad (angle) {
+    return angle * 0.017453292519943295; // (angle / 180) * Math.PI;
+  }
+
+  rad2deg (angle) {
+    return angle * 57.29577951308232; // angle / Math.PI * 180
   }
 
   renderReservation() {
@@ -133,6 +144,10 @@ class ReservationMap extends React.Component {
     let latitude = parseFloat(initialRestaurant.latitude);
     let longitude = parseFloat(initialRestaurant.longitude);
 
+    let radiusInRad = radiusInKM / earthRadiusInKM;
+    let longitudeDelta = this.rad2deg(radiusInRad / Math.cos(this.deg2rad(latitude)));
+    let latitudeDelta = aspectRatio * this.rad2deg(radiusInRad);
+
     return (
       <ScrollView style={{ height: 385}}>
         <MapView
@@ -140,8 +155,10 @@ class ReservationMap extends React.Component {
           initialRegion={{
             latitude: latitude,
             longitude: longitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
+            // latitudeDelta: 0.0922,
+            latitudeDelta: latitudeDelta,
+            // longitudeDelta: 0.0421,
+            longitudeDelta: longitudeDelta,
           }}>
           {this.state.markers && this.state.markers.map(marker => {
             return (
