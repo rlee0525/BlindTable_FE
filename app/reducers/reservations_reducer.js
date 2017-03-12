@@ -20,7 +20,8 @@ let _defaultState = [
     "reservation_url":"http://www.opentable.com/restaurant/profile/2",
     "profile_url":"http://www.opentable.com/restaurant/profile/2",
     "is_restaurant_in_group":false,
-    "number_people": 3
+    "number_people": 3,
+    "image": "https://resizer.otstatic.com/v2/photos/small/2.jpg"
   },
   {
     "rid":4,
@@ -38,7 +39,8 @@ let _defaultState = [
     "reservation_url":"http://www.opentable.com/restaurant/profile/4",
     "profile_url":"http://www.opentable.com/restaurant/profile/4",
     "is_restaurant_in_group":false,
-    "number_people": null
+    "number_people": null,
+    "image": "https://resizer.otstatic.com/v2/photos/small/4.jpg"
   }
 ];
 

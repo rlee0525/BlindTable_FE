@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import ReservationItem from './ReservationItem.js';
 
@@ -10,29 +10,29 @@ import { fetchReservations } from '../../actions/reservations_actions';
 class ReservationsIndex extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-  }
-
-  componentDidMount() {
-
   }
 
   renderReservations() {
-    return this.props.reservations.map( rest => (
-      <View key={rest.phone_number}>
-        <Text>{rest.name}</Text>
-        <Text>{rest.address}</Text>
-        
-      </View>
+    return this.props.reservations.map( res => (
+      <ReservationItem res={res} key={res.phone_number}/>
     ))
   }
 
   render() {
     return (
-      <View>
+      <Image source={require('../../../assets/images/background.png')} style={styles.containerStyle}>
         { this.renderReservations() }
-      </View>
+      </Image>
     )
+  }
+}
+
+const styles = {
+  containerStyle: {
+    paddingTop: 40,
+    paddingLeft: 10,
+    paddingRight: 10,
+    flex: 1
   }
 }
 
