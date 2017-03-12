@@ -10,7 +10,7 @@ import {
   ScrollView
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-// import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { TextInputMask } from 'react-native-masked-text';
 
 class Register extends React.Component {
@@ -55,9 +55,9 @@ class Register extends React.Component {
           <ScrollView keyboardShouldPersistTaps='never'>
             <Image source={require('../../images/logo.png')}
                    style={styles.logo}/>
-
             <View style={styles.textBox}>
-
+              <Icon style={styles.icon} name="user" size={21}
+                    color="rgba(255, 255, 255, 0.8)" />
               <TextInput
                 onChangeText={(name) => this.setState({ name })}
                 style={styles.input} placeholder="Full name"
@@ -66,7 +66,8 @@ class Register extends React.Component {
             </View>
 
             <View style={styles.textBox}>
-              
+              <Icon style={styles.icon} name="phone" size={21}
+                                  color="rgba(255, 255, 255, 0.8)" />
               <TextInputMask
                 onChangeText={(phone_number) => this.setState({ phone_number })}
                 style={styles.input} placeholder="Phone number"
@@ -98,14 +99,16 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   logo: {
-    left: 12,
+    left: 5,
     alignSelf: 'center',
     borderRadius: 5,
     marginTop: 120,
-    marginBottom: 120
+    marginBottom: 120,
+    width: 280,
+    height: 36,
   },
   textBox: {
     borderBottomWidth: 1,
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 130,
     height: 50,
-    backgroundColor: '#0091EA',
+    backgroundColor: '#E53935',
     paddingLeft: 40,
     paddingRight: 40,
     justifyContent: 'center',

@@ -1,5 +1,5 @@
 export const registerUser = user => (
-  fetch('', {
+  fetch('https://www.drappointment.io/api/users', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -12,7 +12,7 @@ export const registerUser = user => (
 );
 
 export const authenticateUser = user => (
-  fetch('', {
+  fetch('localhost:3000/api/session', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
