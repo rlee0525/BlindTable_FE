@@ -10,6 +10,7 @@ import {
   ScrollView
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { Button } from "../common";
 
 class Authentication extends React.Component {
   constructor(props) {
@@ -44,10 +45,10 @@ class Authentication extends React.Component {
 
   render() {
     return (
-      <Image source={require('../../images/temp.jpg')} style={styles.container}>
+      <Image source={require('../../../assets/images/background.png')} style={styles.container}>
         <View style={styles.container}>
           <ScrollView keyboardShouldPersistTaps='never'>
-            <Image source={require('../../images/logo.png')} style={styles.logo}/>
+            <Image source={require('../../../assets/images/logo.png')} style={styles.logo}/>
 
             <View style={styles.textBox}>
               <TextInput
@@ -58,11 +59,7 @@ class Authentication extends React.Component {
                 />
             </View>
 
-            <TouchableHighlight style={styles.button}>
-              <Text style={styles.buttonText} onPress={this.onAuthPressed.bind(this)}>
-                Authenticate
-              </Text>
-            </TouchableHighlight>
+            <Button buttonText="Authenticate" onPress={this.onAuthPressed.bind(this)} />
             <Text style={styles.errors}>
               {this.state.errors ? this.state.errors.join("\n") : ""}
             </Text>
@@ -79,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: null,
     height: null,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    backgroundColor: 'rgba(0, 0, 0, 0)'
   },
   logo: {
     left: 12,
