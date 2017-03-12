@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import ReservationItem from './ReservationItem.js';
 
@@ -20,16 +20,19 @@ class ReservationsIndex extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <Image source={require('../../../assets/images/background.png')} style={styles.containerStyle}>
         { this.renderReservations() }
-      </View>
+      </Image>
     )
   }
 }
 
 const styles = {
-  container: {
-    marginTop: 40
+  containerStyle: {
+    paddingTop: 40,
+    paddingLeft: 10,
+    paddingRight: 10,
+    flex: 1
   }
 }
 
