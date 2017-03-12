@@ -20,24 +20,26 @@ class Register extends React.Component {
     super(props);
 
     this.state = {
-      name: "",
+      first_name: "",
+      last_name: "",
       country_code: "1",
       phone_number: "",
-      image_url: "hello",
-      description: "hello",
+      image_url: "image_url",
+      description: "description",
       errors: []
     };
   }
 
   onRegisterPressed() {
-    let name = this.state.name.split(" ");
+    let first_name = this.state.first_name;
+    let last_name = this.state.last_name;
     let phoneNumber = this.refs['phoneNum'].getRawValue();
     let user = {
-      first_name: name[0],
-      last_name: name[1],
+      first_name,
+      last_name,
       phone_number: phoneNumber,
-      image_url: "hello",
-      description: "hello",
+      image_url: "image_url",
+      description: "description",
     };
 
     this.props.registerUser(user)
@@ -61,25 +63,25 @@ class Register extends React.Component {
           <ScrollView keyboardShouldPersistTaps='never'>
             <Image source={require('../../../assets/images/logo.png')}
                    style={styles.logo}/>
-                 <Text style={styles.welcomeText}>Welcome to BlindTable.</Text>
+            <Text style={styles.welcomeText}>Welcome to BlindTable.</Text>
+            <Text style={styles.inputTitle}>FIRST NAME</Text>
             <View style={styles.textBox}>
-              <Icon style={styles.icon} name="user" size={21}
-                    color="rgba(255, 255, 255, 0.8)" />
               <TextInput
-                onChangeText={(name) => this.setState({ name })}
-                style={styles.input} placeholder="Full name"
-                placeholderTextColor="rgba(255, 255, 255, 0.8)"
-                autoFocus={false} autoCapitalize="words" />
+                onChangeText={(first_name) => this.setState({ first_name })}
+                style={styles.input} autoFocus={true} autoCapitalize="words" />
+            </View>
+            <Text style={styles.inputTitle}>LAST NAME</Text>
+            <View style={styles.textBox}>
+              <TextInput
+                onChangeText={(last_name) => this.setState({ last_name })}
+                style={styles.input} autoFocus={false} autoCapitalize="words" />
             </View>
 
+            <Text style={styles.inputTitle}>PHONE NUMBER</Text>
             <View style={styles.textBox}>
-              <Icon style={styles.icon} name="phone" size={21}
-                                  color="rgba(255, 255, 255, 0.8)" />
               <TextInputMask
                 onChangeText={(phone_number) => this.setState({ phone_number })}
-                style={styles.input} placeholder="Phone number"
-                placeholderTextColor="rgba(255, 255, 255, 0.8)"
-                value={this.state.phone_number} type={'cel-phone'}
+                style={styles.input} value={this.state.phone_number} type={'cel-phone'}
                 options={{dddMask: '(999) 999-9999'}} ref={'phoneNum'}
               />
             </View>
@@ -107,32 +109,36 @@ const styles = StyleSheet.create({
   welcomeText: {
     color: 'white',
     marginLeft: "5%",
-    marginBottom: "10%",
+    marginBottom: "5%",
     fontSize: 25,
     letterSpacing: 1,
   },
+  inputTitle: {
+    color: 'white',
+    marginLeft: "5%",
+    marginTop: "10%",
+    fontSize: 13,
+    fontWeight: 'bold',
+  },
   logo: {
-    marginTop: "30%",
+    marginTop: "25%",
     marginBottom: "10%",
     marginLeft: "5%",
     height: 40,
     width: 40,
   },
   textBox: {
-    borderBottomWidth: 1,
+    borderBottomWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.7)',
     flexDirection: 'row',
-  },
-  icon: {
-    flex: 0.15,
-    marginTop: 23,
-    paddingLeft: 25,
+    marginLeft: "5%",
+    marginRight: "5%",
   },
   input: {
     flex: 0.85,
     marginTop: 10,
     alignSelf: 'stretch',
-    height: 50,
+    height: 30,
     fontSize: 15,
     fontFamily: 'Arial',
     color: 'white',
