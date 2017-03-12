@@ -34,8 +34,8 @@ class ReservationMap extends React.Component {
         id: e['rid'],
         name: e['name'],
         latlng: {
-          latitude: parseInt(e['latitude']),
-          longitude: parseInt(e['longitude'])
+          latitude: parseFloat(e['latitude']),
+          longitude: parseFloat(e['longitude'])
         }
       };
     });
@@ -130,8 +130,8 @@ class ReservationMap extends React.Component {
 
   render() {
     let initialRestaurant = this.props.reservations[0];
-    let latitude = parseInt(initialRestaurant.latitude);
-    let longitude = parseInt(initialRestaurant.longitude);
+    let latitude = parseFloat(initialRestaurant.latitude);
+    let longitude = parseFloat(initialRestaurant.longitude);
 
     return (
       <ScrollView style={{ height: 385}}>
