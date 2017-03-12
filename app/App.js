@@ -6,6 +6,7 @@ import configureStore from './store/store';
 import Register from './components/Register';
 import Authentication from './components/Authentication';
 import Home from './components/Home';
+import RestaurantIndex from './components/RestaurantIndex';
 
 const store = configureStore();
 

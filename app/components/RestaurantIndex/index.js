@@ -3,22 +3,32 @@ import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { View, Text } from 'react-native';
 
+import RestaurantItem from './RestaurantItem.js';
+
 class RestaurantIndex extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+  }
+
+  renderRestaurants() {
+    this.props.restaurants.map( rest => (
+      <View>
+        <Text>rest.name</Text>
+      </View>
+    ))
   }
 
   render() {
     return (
       <View>
-        <Text>Works</Text>
+        { this.renderRestaurants() }
       </View>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = ({restaurants}) => ({
+  restaurants
 })
 
 const mapDispatchToProps = dispatch => ({
