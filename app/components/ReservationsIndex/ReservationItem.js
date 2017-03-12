@@ -41,8 +41,8 @@ class ReservationItem extends React.Component {
             <SmallButton
               buttonText={'8:00 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:00PM?`,
+                `${this.props.res.name}`,
+                `Join the party for 8:00PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!') },
                   {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
@@ -52,8 +52,8 @@ class ReservationItem extends React.Component {
             <SmallButton
               buttonText={'8:15 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:15PM?`,
+                `${this.props.res.name}`,
+                `Join the party for 8:15PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!') },
                   {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
@@ -65,8 +65,8 @@ class ReservationItem extends React.Component {
             <SmallButton
               buttonText={'8:30 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:30PM?`,
+                `${this.props.res.name}`,
+                `Join the party for 8:30PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!') },
                   {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
@@ -76,8 +76,8 @@ class ReservationItem extends React.Component {
             <SmallButton
               buttonText={'8:45 PM'}
               onPress={() => Alert.alert(
-                `Thirsty Bear`,
-                `Would you like to make a reservation at Thirsty Bear for 8:45PM?`,
+                `${this.props.res.name}`,
+                `Join the party for 8:45PM?`,
                 [
                   {text: 'No', onPress: () => console.log('Cancel Pressed!') },
                   {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
@@ -101,7 +101,7 @@ const styles = {
     flexDirection: "column",
     padding: "7%",
     borderBottomWidth: 1,
-    borderColor: '#4a4c4f',
+    borderColor: '#edb6ba',
   },
   containerStyle: {
     elevation: 1,
