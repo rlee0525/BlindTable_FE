@@ -21,9 +21,11 @@ class ReservationsIndex extends React.Component {
   render() {
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.containerStyle}>
-        <ScrollView style={styles.container}>
-          { this.renderReservations() }
-        </ScrollView>
+        <View style={styles.container}>
+          <ScrollView style={styles.scrollContainer}>
+            { this.renderReservations() }
+          </ScrollView>
+        </View>
       </Image>
     );
   }
@@ -37,7 +39,20 @@ const styles = {
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  },
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: 'white',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    marginTop: "23%",
+  },
+  scrollContainer: {
+    alignSelf: 'center',
+    width: "100%"
+  },
 };
 
 const mapStateToProps = ({reservations}) => ({

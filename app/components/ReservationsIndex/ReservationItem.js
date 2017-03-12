@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, View, Text, Image } from 'react-native';
 
-import { Button } from '../common';
+import { SmallButton } from '../common/small_button.js';
 
 const RestaurantItem = props => (
     <View style={styles.containerStyle}>
@@ -9,22 +9,29 @@ const RestaurantItem = props => (
         <Text>{props.res.name}</Text>
         <Text>{props.res.address}</Text>
         <Text>{props.res.city}, {props.res.state}, {props.res.postal_code}</Text>
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
-          />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
-          />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
-          />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
-          />
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <View style={styles.itemButton}>
+          <SmallButton
+            buttonText={'Join'}
+            onPress={console.log('joined ress')}
+            />
+          <SmallButton
+            buttonText={'Join'}
+            onPress={console.log('joined ress')}
+            />
+        </View>
+        <View style={styles.itemButton}>
+          <SmallButton
+            buttonText={'Join'}
+            onPress={console.log('joined ress')}
+            />
+          <SmallButton
+            buttonText={'Join'}
+            onPress={console.log('joined ress')}
+            />
+        </View>
       </View>
     </View>
 );
@@ -32,21 +39,19 @@ const RestaurantItem = props => (
 const styles = {
   containerStyle: {
     backgroundColor: "white",
-    // borderWidth: 1,
-    // borderRadius: 2,
-    // borderColor: '#ddd',
-    // borderBottomWidth: 0,
-    // shadowColor: '#000',
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 2,
     elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10,
-    width: "90%",
-    flexDirection: 'row',
+    width: "100%",
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: "7%",
+    borderBottomWidth: 1,
+    borderColor: '#4a4c4f'
+  },
+  buttonContainer: {
 
+  },
+  itemButton: {
+    flexDirection: 'row'
   }
 };
 
