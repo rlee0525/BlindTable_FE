@@ -1,11 +1,28 @@
 import React from 'react';
-import { ScrollView, View, Text, Image, Alert } from 'react-native';
+import { ScrollView, View, Text, Image, Alert, TouchableOpacity } from 'react-native';
 
 import { SmallButton } from '../common';
 
-class RestaurantItem extends React.Component {
+class ReservationItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      buttonOne: false,
+      buttonTwo: false,
+      buttonThree: false,
+      buttonFour: false,
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(time) {
+    const res = {
+      restaurant_id: this.props.res.rid,
+      date_time: time,
+      party_size: 1
+    };
+    this.props.createReservation(res);
   }
 
   render() {
@@ -32,8 +49,8 @@ class RestaurantItem extends React.Component {
                 `${this.props.res.name}`,
                 `Join the party for 8:00PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:00 PM') },
                 ]
               )}
               />
@@ -43,8 +60,8 @@ class RestaurantItem extends React.Component {
                 `${this.props.res.name}`,
                 `Join the party for 8:15PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:15 PM') },
                 ]
               )}
               />
@@ -56,8 +73,8 @@ class RestaurantItem extends React.Component {
                 `${this.props.res.name}`,
                 `Join the party for 8:30PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:30 PM') },
                 ]
               )}
               />
@@ -67,8 +84,8 @@ class RestaurantItem extends React.Component {
                 `${this.props.res.name}`,
                 `Join the party for 8:45PM?`,
                 [
-                  {text: 'No', onPress: () => console.log('Cancel Pressed!')},
-                  {text: 'Yes', onPress: () => console.log('OK Pressed!')},
+                  {text: 'No', onPress: () => console.log('Cancel Pressed!') },
+                  {text: 'Yes', onPress: () => this.handleSubmit('8:45 PM') },
                 ]
               )}
               />
@@ -110,7 +127,38 @@ const styles = {
   },
   city: {
     color: '#343435'
+  },
+  button: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#ed6d72',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20
+  },
+  buttonText: {
+    zIndex: 30,
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Arial',
+    letterSpacing: 0.5
+  },
+  buttonAlt: {
+    marginTop: '7%',
+    // alignSelf: 'center',
+    height: 30,
+    width: 150,
+    backgroundColor: '#f7a5a9',
+    paddingLeft: 40,
+    paddingRight: 40,
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginRight: 20,
   }
 };
 
-export default RestaurantItem;
+export default ReservationItem;
