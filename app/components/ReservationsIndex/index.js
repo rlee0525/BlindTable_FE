@@ -17,10 +17,12 @@ class ReservationsIndex extends React.Component {
 
   }
 
-  renderReservationss() {
+  renderReservations() {
     return this.props.reservations.map( rest => (
-      <View>
+      <View key={rest.phone_number}>
         <Text>{rest.name}</Text>
+        <Text>{rest.address}</Text>
+        
       </View>
     ))
   }
@@ -28,7 +30,7 @@ class ReservationsIndex extends React.Component {
   render() {
     return (
       <View>
-        { this.renderReservationss() }
+        { this.renderReservations() }
       </View>
     )
   }
