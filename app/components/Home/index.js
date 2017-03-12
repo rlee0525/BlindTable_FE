@@ -5,21 +5,26 @@ import {
   Text,
   View,
   Picker,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { SearchInput } from '../common';
+import { Button } from "../common";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hour: "12",
+      hour: "06",
       ampm: "pm"
     };
   }
 
+  onButtonPress() {
+
+  }
 
   render() {
     return (
@@ -59,6 +64,7 @@ class Home extends React.Component {
               <Picker.Item color="white" label="PM" value="pm" />
             </Picker>
           </View>
+          <Button buttonText="Find Reservations" onPress={this.onButtonPress.bind(this)}/>
         </View>
       </Image>
     );
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   logo: {
-    marginTop: "30%",
+    marginTop: "20%",
     marginBottom: "10%",
     height: 50,
     width: 50,
@@ -99,7 +105,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    borderBottomColor: 'white'
   },
   individualPicker: {
     width: "40%"
@@ -115,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: "white",
     marginBottom: "10%"
-  }
+  },
 });
 
 
