@@ -36,3 +36,16 @@ export const fetchReservations = query => (
     })
   })
 );
+
+export const createReservation = query => (
+  fetch('http://localhost:3000/api/reservations', {
+    method: "POST",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query
+    })
+  })
+);

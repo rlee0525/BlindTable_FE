@@ -1,7 +1,8 @@
 import { merge } from 'lodash';
 import {
+  RECEIVE_RESERVATION,
   RECEIVE_RESERVATIONS,
-  CLEAR_RESERVATIONS } from "../actions/reservations_actions.js"
+  CLEAR_RESERVATIONS } from "../actions/reservations_actions.js";
 
 let _defaultState = [
   {
@@ -47,6 +48,8 @@ let _defaultState = [
 const reservationsReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch(action.type) {
+    case RECEIVE_RESERVATION:
+      return merge([], state, action.reservation);
     case RECEIVE_RESERVATIONS:
       return merge([], state, action.reservations);
     case CLEAR_RESERVATIONS:
