@@ -11,16 +11,20 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 import { SearchInput } from '../common';
+import { Button } from "../common";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hour: "12",
+      hour: "06",
       ampm: "pm"
     };
   }
 
+  onButtonPress() {
+
+  }
 
   render() {
     return (
@@ -60,9 +64,7 @@ class Home extends React.Component {
               <Picker.Item color="white" label="PM" value="pm" />
             </Picker>
           </View>
-          <TouchableHighlight style={styles.submitButton}>
-            <Text style={styles.submitText}>Find Reservations</Text>
-          </TouchableHighlight>
+          <Button buttonText="Find Reservations" onPress={this.onButtonPress.bind(this)}/>
         </View>
       </Image>
     );
@@ -119,13 +121,6 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: "10%"
   },
-  submitText: {
-    color: "white"
-  },
-  submitButton: {
-    height: 40,
-    width: "100%"
-  }
 });
 
 
