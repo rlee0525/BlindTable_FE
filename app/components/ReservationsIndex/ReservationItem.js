@@ -1,52 +1,79 @@
 import React from 'react';
 import { ScrollView, View, Text, Image } from 'react-native';
 
-import { Button } from '../common';
+import { SmallButton } from '../common';
 
 const RestaurantItem = props => (
-    <View style={styles.containerStyle}>
-      <View style={styles.infoStyle}>
-        <Text>{props.res.name}</Text>
-        <Text>{props.res.address}</Text>
-        <Text>{props.res.city}, {props.res.state}, {props.res.postal_code}</Text>
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
+  <View style={styles.container}>
+    <View style={styles.details}>
+      <Image source={require('../../../assets/images/sample.jpg')} style={{height: 75, width: 75}}>
+      </Image>
+      <View style={styles.containerStyle}>
+
+        <View style={styles.infoStyle}>
+          <Text style={styles.name}>{props.res.name}</Text>
+          <Text style={styles.address}>{props.res.address}</Text>
+          <Text style={styles.city}>{props.res.city}, {props.res.state}, {props.res.postal_code}</Text>
+        </View>
+
+      </View>
+    </View>
+    <View style={styles.buttonContainer}>
+      <View style={styles.itemButton}>
+        <SmallButton
+          buttonText={'8:00 PM'}
+          onPress={() => console.log('joined ress')}
           />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
+        <SmallButton
+          buttonText={'8:15 PM'}
+          onPress={() => console.log('joined ress')}
           />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
+      </View>
+      <View style={styles.itemButton}>
+        <SmallButton
+          buttonText={'8:30 PM'}
+          onPress={() => console.log('joined ress')}
           />
-        <Button
-          buttonText={'Join'}
-          onPress={console.log('joined ress')}
+        <SmallButton
+          buttonText={'8:45 PM'}
+          onPress={() => console.log('joined ress')}
           />
       </View>
     </View>
+  </View>
 );
 
 const styles = {
+  details: {
+    width: "100%",
+    flexDirection: "row"
+  },
+  container: {
+    width: "100%",
+    flexDirection: "column",
+    padding: "7%",
+    borderBottomWidth: 1,
+    borderColor: '#4a4c4f',
+  },
   containerStyle: {
-    backgroundColor: "white",
-    // borderWidth: 1,
-    // borderRadius: 2,
-    // borderColor: '#ddd',
-    // borderBottomWidth: 0,
-    // shadowColor: '#000',
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowOpacity: 0.1,
-    // shadowRadius: 2,
     elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10,
-    width: "90%",
-    flexDirection: 'row',
-
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    paddingLeft: "7%"
+  },
+  itemButton: {
+    flexDirection: 'row'
+  },
+  name: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#202021'
+  },
+  address: {
+    color: '#343435'
+  },
+  city: {
+    color: '#343435'
   }
 };
 

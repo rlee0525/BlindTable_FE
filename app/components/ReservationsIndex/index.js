@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-import { ScrollView, View, Text, Image } from 'react-native';
+import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native';
 
 import ReservationItem from './ReservationItem.js';
 
@@ -21,15 +21,33 @@ class ReservationsIndex extends React.Component {
   render() {
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.containerStyle}>
-        <ScrollView style={styles.container}>
-          { this.renderReservations() }
-        </ScrollView>
+        <TouchableOpacity style={styles.back}>
+          <Text style={styles.backText}>{"< Back"}</Text>
+        </TouchableOpacity>
+        <View style={styles.container}>
+          <ScrollView style={styles.scrollContainer}>
+            { this.renderReservations() }
+          </ScrollView>
+        </View>
       </Image>
     );
   }
 }
 
 const styles = {
+  back: {
+    height: "10%",
+    width: "100%",
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingTop: 5
+  },
+  backText: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: "white"
+  },
   containerStyle: {
     flex: 1,
     width: undefined,
@@ -37,7 +55,19 @@ const styles = {
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  },
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: 'white',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  scrollContainer: {
+    alignSelf: 'center',
+    width: "100%"
+  },
 };
 
 const mapStateToProps = ({reservations}) => ({
