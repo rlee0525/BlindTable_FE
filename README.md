@@ -9,7 +9,7 @@ Members:
 - Elif Sezgin
 - Raymond Lee
 
-<img src="https://github.com/rlee0525/BlindTable_FE/blob/master/app/images/BlindTable.gif" width="200">
+<img src="https://github.com/rlee0525/BlindTable_FE/blob/master/assets/images/BlindTable.gif" width="200">
 
 ## Background
 
