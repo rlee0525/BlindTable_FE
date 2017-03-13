@@ -22,6 +22,6 @@ Backend was built using Ruby on Rails and PostgreSQL: [BlindTable_BE][backend]
 ## Architecture and Technologies
 
 - React Native (iOS / Android)
-- Rails (Heroku with SSL)
+- Rails
 - API Authy / Twilio (text messaging)
 - OpenTable API
