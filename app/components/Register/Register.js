@@ -41,6 +41,7 @@ class Register extends React.Component {
       image_url: "image_url",
       description: "description",
     };
+    console.log(user);
 
     this.props.registerUser(user)
       .then(response => {
@@ -57,6 +58,7 @@ class Register extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <Image source={require('../../../assets/images/background.png')} style={styles.container}>
         <View style={styles.container}>

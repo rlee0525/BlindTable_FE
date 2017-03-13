@@ -25,7 +25,7 @@ export const authenticateUser = user => (
 );
 
 export const fetchReservations = query => (
-  fetch('localhost:3000/api/reservations', {
+  fetch('http://localhost:3000/api/reservations', {
     method: "GET",
     headers: {
       'Accept': 'application/json',
@@ -35,4 +35,4 @@ export const fetchReservations = query => (
       query
     })
   })
-)
+);
