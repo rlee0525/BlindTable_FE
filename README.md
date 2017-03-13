@@ -1,15 +1,17 @@
-#BlindTable
+#BlindTable - Reactathon 2017
 
-Reactathon 2017
+<img src="https://github.com/rlee0525/BlindTable_FE/blob/master/assets/images/BlindTable.gif" width="200">
 
-Members:
+##Members:
 - Daniel Chang
 - David Hu
 - Edwin La
 - Elif Sezgin
 - Raymond Lee
 
-<img src="https://github.com/rlee0525/BlindTable_FE/blob/master/assets/images/BlindTable.gif" width="200">
+##Product
+
+![BlindTable page](./assets/images/bt.png)
 
 ## Background
 
